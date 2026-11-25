@@ -3,119 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WYGEI Website</title>
+<title>WYGEI Agribusiness</title>
+<meta name="description" content="WYGEI is a youth-driven agribusiness in Harare growing and selling fresh produce with solar-powered irrigation.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Nunito+Sans:wght@400;600;700&display=swap">
-<style>
-/* VOICE occasion: a community enterprise's website, warm and practical
-   IDEA a solar-pumped smallholding: sun, panel, borehole, tank, drip lines, crop rows
-   PICTURE layered field scene with water travelling down the drip line to the crops
-   COLOUR logo green #2E8B1E dominant fields, logo navy #16346E ink, sun #F5C400 accent, water #1E9BE0
-   TYPE Montserrat 800 (matches the logo lettering) + Nunito Sans
-   LAYOUT laptop: title band with scene beneath at full width; phone: title, scene, buttons */
-:root{color-scheme:light dark;
---bg:light-dark(#FFFFFF,#0C1A33);
---ink:light-dark(#16346E,#EEF3FB);
---soft:light-dark(#3E4E6E,#B8C6DE);
---green:light-dark(#2E8B1E,#3FA82C);
---greenband:light-dark(#2E8B1E,#1F5E17);
---onGreen:#FFFFFF;
---sun:#F5C400;
---water:light-dark(#1E9BE0,#4DB6F0);
---panel:light-dark(#F2F7EE,#13264A);
---line:light-dark(#D9E3D2,#25395F);
---sky1:light-dark(#DDF0FF,#0A1630);
---sky2:light-dark(#FFF4CC,#1B2C55);
---hill:light-dark(#BFE0A6,#1E4A2A);
---soil:light-dark(#B98A5E,#5A3F2A);
---soil2:light-dark(#A4774D,#4A3322)}
-:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
-*{box-sizing:border-box;min-width:0}
-html{scroll-padding-top:84px;scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 'Nunito Sans',Arial,sans-serif;overflow-x:clip}
-img{max-width:100%;height:auto;display:block}
-a{color:inherit}
-h1,h2,h3{font-family:Montserrat,Arial,sans-serif;font-weight:800;line-height:1.08;letter-spacing:-.02em;margin:0;text-wrap:balance}
-h1{font-size:clamp(34px,5.2vw,60px)}
-h2{font-size:clamp(28px,3.6vw,44px)}
-h3{font-size:21px;line-height:1.2}
-p{margin:0}
-.wrap{max-width:1240px;margin:0 auto}
-.band{padding-block:clamp(40px,6vw,88px);padding-inline:max(5vw,16px)}
-.lead{font-size:19px;color:var(--soft);max-width:62ch}
-nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;gap:20px;padding:8px max(5vw,16px);flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
-.brand span{background:#fff;border-radius:10px;padding:2px 6px;display:block}
-.brand img{height:52px;width:auto}
-.links{display:flex;gap:6px;flex-wrap:wrap}
-.links a{text-decoration:none;font-weight:700;font-size:15px;padding:10px 12px;border-radius:8px}
-.links a:hover,.links a:focus-visible{background:var(--panel)}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;font-size:16px;cursor:pointer;font-family:inherit}
-.btn.sun{background:var(--sun);color:#16346E}
-.btn.ghost{border-color:currentColor;background:transparent;color:inherit}
-.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--water);outline-offset:2px}
-.hero{padding-bottom:0}
-.hero .top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:end}
-.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
-.fig{position:relative;height:clamp(260px,34vw,440px);margin-top:36px}
-.fig>svg{position:absolute;inset:0;width:100%;height:100%}
-.green{background:var(--greenband);color:var(--onGreen)}
-.green .lead,.green p{color:#E6F4E1}
-.services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:36px}
-.svc{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:12px}
-.svc svg{width:56px;height:56px}
-.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
-.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px}
-.fact{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
-.fact b{display:block;font-family:Montserrat,Arial,sans-serif;font-size:22px}
-.fact span{color:var(--soft);font-size:15px}
-.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.steps li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;padding:18px 0;border-top:1px solid var(--line)}
-.steps li:last-child{border-bottom:1px solid var(--line)}
-.steps .when{font-family:Montserrat,Arial,sans-serif;font-weight:800;color:var(--green);white-space:nowrap;min-width:7.5em}
-.steps p{color:var(--soft)}
-.targets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
-.target{border-radius:16px;padding:22px;background:var(--sun);color:#16346E}
-.target b{display:block;font-family:Montserrat,Arial,sans-serif;font-size:clamp(36px,4vw,52px);line-height:1}
-.note{font-size:14px;color:var(--soft);margin-top:12px}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:32px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:10px}
-.card p{color:var(--soft)}
-.card ul{margin:0;padding-left:20px;color:var(--soft)}
-.founder{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:center;margin-top:28px}
-.mono{width:120px;height:120px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font:800 40px Montserrat,Arial,sans-serif}
-form{display:grid;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:clamp(20px,3vw,32px)}
-label{font-weight:700;font-size:15px;display:grid;gap:6px}
-input,select,textarea{font:16px 'Nunito Sans',Arial,sans-serif;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);min-height:48px;width:100%}
-textarea{min-height:110px;resize:vertical}
-.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.out{display:none;gap:12px;border-top:1px solid var(--line);padding-top:16px}
-.out.show{display:grid}
-.out pre{white-space:pre-wrap;margin:0;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px;font:15px/1.5 'Nunito Sans',Arial,sans-serif}
-.row{display:flex;gap:10px;flex-wrap:wrap}
-.contact{display:grid;gap:18px;align-content:start}
-.contact dl{margin:0;display:grid;gap:14px}
-.contact dt{font-weight:700;font-size:14px;color:var(--soft)}
-.contact dd{margin:0;font-size:19px;font-weight:700;overflow-wrap:anywhere}
-.green .contact dt{color:#D3EBCB}
-.green .contact dd,.green .contact dd a{color:#FFFFFF}
-.logochip{background:#fff;border-radius:16px;padding:12px;max-width:320px}
-footer{background:#16346E;color:#DCE5F5}
-footer .wrap{display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;align-items:center}
-footer a{color:#fff}
-@keyframes drip{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}
-.flow{stroke-dasharray:6 14;animation:drip 1.6s linear infinite}
-@media(prefers-reduced-motion:reduce){.flow{animation:none}html{scroll-behavior:auto}}
-@media(max-width:900px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}.cards{grid-template-columns:minmax(0,1fr)}.hero .top{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:720px){.split{grid-template-columns:minmax(0,1fr)}.links a{padding:8px 9px;font-size:14px}}
-@media(max-width:600px){.services,.facts,.two{grid-template-columns:minmax(0,1fr)}.targets{grid-template-columns:minmax(0,1fr)}.founder{grid-template-columns:minmax(0,1fr)}.brand img{height:44px}.steps li{grid-template-columns:minmax(0,1fr);gap:4px}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <nav aria-label="Main">
 <div class="wrap">
 <a class="brand" href="#top"><span><img src="logo.png" alt="WYGEI, Waterfalls Youth Green Energy Initiative" width="78" height="52"></span></a>
-<div class="links"><a href="#services">What we do</a><a href="#farm">Farm</a><a href="#youth">Youth</a><a href="#partners">Partners</a><a href="#contact">Contact</a></div>
+<div class="links"><a href="#model">Our model</a><a href="#production">Production</a><a href="#youth">Youth</a><a href="invest.html">Invest</a><a href="#contact">Contact</a></div>
 </div>
 </nav>
 
@@ -123,10 +20,10 @@ footer a{color:#fff}
 <div class="wrap">
 <div class="top">
 <div style="display:grid;gap:20px">
-<h1>Water and sun, put to work by young people</h1>
-<p class="lead">Waterfalls Youth Green Energy Initiative drills boreholes, installs solar power and trains young Zimbabweans. Now we are using that water and energy to grow food and create farm jobs.</p>
+<h1>Growing food. Creating jobs. Empowering youth.</h1>
+<p class="lead">A youth-driven agribusiness transforming Zimbabwean agriculture through solar-powered irrigation, commercial crop production and sustainable market access.</p>
 </div>
-<div class="ctas"><a class="btn sun" href="#youth">Join our youth programme</a><a class="btn ghost" href="#contact">Talk to us</a></div>
+<div class="ctas"><a class="btn sun" href="invest.html">Investment &amp; partnerships</a><a class="btn ghost" href="#buyers">Buy our produce</a></div>
 </div>
 <div class="fig" aria-label="A solar panel powers a borehole pump that fills a tank and drips water along rows of crops">
 <svg id="scene" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Solar-powered borehole irrigating crop rows">
@@ -169,49 +66,111 @@ footer a{color:#fff}
 </div>
 </header>
 
-<section class="band green" id="services">
+<section class="band green" id="model">
 <div class="wrap">
-<h2>What we do</h2>
-<p class="lead" style="margin-top:14px">Four services, one aim: reliable water and power in the hands of young people who can run them.</p>
-<div class="services">
-<div class="svc"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M28 6 C38 20 44 28 44 36 A16 16 0 0 1 12 36 C12 28 18 20 28 6Z" fill="#8FD3FF"/><path d="M20 36 A8 8 0 0 0 28 44" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg><h3>Borehole services</h3><p>Siting, drilling, pump installation and maintenance so households, schools and farms have dependable water.</p></div>
-<div class="svc"><svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="40" cy="14" r="8" fill="#F5C400"/><polygon points="6,34 40,26 46,40 12,48" fill="#fff"/><path d="M14 36 L42 30 M10 41 L44 34 M20 33 L25 46 M30 31 L35 44" stroke="#2E8B1E" stroke-width="2"/></svg><h3>Rural electrification</h3><p>Solar systems that power pumps, homes and small businesses away from the grid, without diesel costs.</p></div>
-<div class="svc"><svg viewBox="0 0 56 56" aria-hidden="true"><polygon points="28,10 52,22 28,34 4,22" fill="#fff"/><path d="M14 27 V38 C14 44 42 44 42 38 V27" fill="#F5C400"/><path d="M48 24 V38" stroke="#fff" stroke-width="3"/></svg><h3>Youth training</h3><p>Hands-on skills in solar installation, borehole upkeep and, now, irrigated farming and selling produce.</p></div>
-<div class="svc"><svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="16" r="7" fill="#fff"/><circle cx="12" cy="22" r="5.5" fill="#F5C400"/><circle cx="44" cy="22" r="5.5" fill="#F5C400"/><path d="M16 46 C16 32 40 32 40 46Z" fill="#fff"/><path d="M2 46 C2 36 20 34 20 42 V46Z M54 46 C54 36 36 34 36 42 V46Z" fill="#F5C400"/></svg><h3>Youth employment</h3><p>Paid roles on our projects and farm, and a route for young growers to run their own plots.</p></div>
+<h2>An agribusiness with a social mission</h2>
+<p class="lead" style="margin-top:14px">We grow and sell fresh produce. Our water and solar skills keep the farm productive, and every profitable season creates work for young people.</p>
+<div class="pillars">
+<div class="pillar"><span class="role">Core business</span><h3>Agriculture</h3><p>Commercial production of vegetables for Harare buyers, planned against confirmed demand and tracked by cost per saleable kilogram.</p></div>
+<div class="pillar"><span class="role">Competitive advantage</span><h3>Green energy</h3><p>We already drill boreholes and install solar systems, so our farm has reliable water without fuel or grid costs.</p></div>
+<div class="pillar"><span class="role">Social impact</span><h3>Youth</h3><p>Paid farm jobs, hands-on training and out-grower plots for young women and men aged 16 to 35.</p></div>
 </div>
+<div class="chain" aria-label="Production leads to sales, profit, growth and employment"><span>Production</span><i>→</i><span>Sales</span><i>→</i><span>Profit</span><i>→</i><span>Growth</span><i>→</i><span>Employment</span></div>
 </div>
 </section>
 
 <section class="band" id="farm">
 <div class="wrap split">
 <div>
-<h2>Our new solar-irrigated farm</h2>
-<p class="lead" style="margin-top:14px">Most small growers in Zimbabwe are held back by water. Water is what we already deliver. Our pilot farm turns that strength into fresh produce for Harare buyers and steady work for young people.</p>
+<h2>The pilot farm</h2>
+<p class="lead" style="margin-top:14px">Most small growers in Zimbabwe are held back by water. Water is what we already deliver. Our first two hectares turn that strength into fresh produce and steady work.</p>
 <div class="facts">
-<div class="fact"><b>2 hectares</b><span>pilot area, drip-irrigated</span></div>
+<div class="fact"><b>2 hectares</b><span>drip-irrigated pilot</span></div>
 <div class="fact"><b>Solar pumping</b><span>borehole water without fuel bills</span></div>
-<div class="fact"><b>2–3 crops</b><span>chosen from tomatoes, onions and potatoes</span></div>
+<div class="fact"><b>3 crops</b><span>tomatoes, onions and potatoes</span></div>
 <div class="fact"><b>Buyers first</b><span>price, grade and delivery agreed before planting</span></div>
 </div>
 </div>
 <div>
 <h3>The first 12 months</h3>
 <ol class="steps" style="margin-top:12px">
-<li><span class="when">Months 1–3</span><div><b>Validate.</b> <p>Confirm site, water tests, crops and buyers. Recruit the first youth group.</p></div></li>
-<li><span class="when">Months 4–6</span><div><b>Produce.</b> <p>Install solar drip, train on the farm, plant in stages and record every cost.</p></div></li>
+<li><span class="when">Months 1–3</span><div><b>Validate.</b> <p>Confirm site, water tests, crop mix and buyers. Recruit the first youth group.</p></div></li>
+<li><span class="when">Months 4–6</span><div><b>Produce.</b> <p>Install solar drip, train on the farm, plant in staggered batches and record every cost.</p></div></li>
 <li><span class="when">Months 7–9</span><div><b>Sell.</b> <p>Harvest, grade, deliver and get paid. Compare real margins with the plan.</p></div></li>
 <li><span class="when">Months 10–12</span><div><b>Expand.</b> <p>Grow the crops and buyers that worked. Prepare out-grower plots for year two.</p></div></li>
 </ol>
 </div>
 </div>
-<div class="wrap" style="margin-top:36px">
-<h3>Our targets</h3>
-<div class="targets">
-<div class="target"><b>4</b>paid farm jobs in year one</div>
-<div class="target"><b>20</b>young people trained on the farm</div>
-<div class="target"><b>10</b>youth out-growers in year two</div>
+</section>
+
+<section class="band" id="production" style="background:var(--panel)">
+<div class="wrap">
+<h2>Production and sales plan</h2>
+<p class="lead" style="margin-top:14px">Year-one pilot: 20 tonnes of saleable produce and US$20,000 in sales, with the farm breaking even at about two-thirds of that volume.</p>
+<div class="split" style="margin-top:12px">
+<div>
+<h3>Production by crop</h3>
+<div class="tblwrap"><table>
+<thead><tr><th>Crop</th><th class="n">Hectares</th><th class="n">Tonnes</th><th class="n">US$/kg</th><th class="n">Sales US$</th></tr></thead>
+<tbody id="crops"></tbody>
+</table></div>
+<p class="note">One harvest per plot is counted per year, planted in staggered batches so supply reaches buyers over several months. Extra cycles are not counted.</p>
 </div>
-<p class="note">These are targets for the pilot, not results yet. At least half of the young people we recruit will be young women.</p>
+<div>
+<h3>Sales by crop</h3>
+<div class="bars" id="bars"></div>
+<div class="kpis">
+<div class="kpi"><b id="k-rev"></b><span>annual sales</span></div>
+<div class="kpi"><b>20%</b><span>operating margin</span></div>
+<div class="kpi"><b>≈13 t</b><span>break-even volume</span></div>
+</div>
+</div>
+</div>
+<div class="split" style="margin-top:40px">
+<div>
+<h3>Costs and margin, year one</h3>
+<div class="tblwrap"><table>
+<thead><tr><th>Line</th><th class="n">US$</th></tr></thead>
+<tbody id="pl"></tbody>
+</table></div>
+</div>
+<div id="buyers">
+<h3>Target buyers and supply terms</h3>
+<ul class="steps" style="margin-top:12px">
+<li><span class="when">Traders</span><div><p>Wholesale traders at Mbare Musika for volume and quick payment.</p></div></li>
+<li><span class="when">Retail</span><div><p>Supermarkets and greengrocers needing consistent grade and packing.</p></div></li>
+<li><span class="when">Food service</span><div><p>Restaurants and caterers buying weekly, by standing order.</p></div></li>
+<li><span class="when">Institutions</span><div><p>Schools, clinics and canteens with steady, predictable demand.</p></div></li>
+</ul>
+<p class="note">Before each planting we agree price per kilogram, grade, packaging, delivery days and payment terms in writing, and no single buyer takes more than 40% of sales.</p>
+</div>
+</div>
+<p class="assume">These are planning assumptions for the pilot, not results. Yields are set conservatively and will be replaced with buyer prices and our own harvest records. Funding of US$10,000 puts this plan in the ground: <a href="invest.html">see how it would be used</a>.</p>
+</div>
+</section>
+
+<section class="band" id="targets">
+<div class="wrap">
+<h2>Jobs the farm can pay for</h2>
+<div class="targets">
+<div class="target"><b>4</b>paid farm jobs in year one, funded from sales</div>
+<div class="target"><b>20</b>young people trained on the farm</div>
+<div class="target"><b>10</b>youth out-growers selling through WYGEI in year two</div>
+</div>
+<p class="note">These are targets, not results yet. At least half of the young people we recruit will be young women.</p>
+</div>
+</section>
+
+<section class="band green" id="services">
+<div class="wrap">
+<h2>Our edge: water and energy we already deliver</h2>
+<p class="lead" style="margin-top:14px">The same services that power our farm are available to households, schools, farms and communities.</p>
+<div class="services">
+<div class="svc"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M28 6 C38 20 44 28 44 36 A16 16 0 0 1 12 36 C12 28 18 20 28 6Z" fill="#8FD3FF"/><path d="M20 36 A8 8 0 0 0 28 44" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg><h3>Borehole services</h3><p>Siting, drilling, pump installation and maintenance so households, schools and farms have dependable water.</p></div>
+<div class="svc"><svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="40" cy="14" r="8" fill="#F5C400"/><polygon points="6,34 40,26 46,40 12,48" fill="#fff"/><path d="M14 36 L42 30 M10 41 L44 34 M20 33 L25 46 M30 31 L35 44" stroke="#2E8B1E" stroke-width="2"/></svg><h3>Rural electrification</h3><p>Solar systems that power pumps, homes and small businesses away from the grid, without diesel costs.</p></div>
+<div class="svc"><svg viewBox="0 0 56 56" aria-hidden="true"><polygon points="28,10 52,22 28,34 4,22" fill="#fff"/><path d="M14 27 V38 C14 44 42 44 42 38 V27" fill="#F5C400"/><path d="M48 24 V38" stroke="#fff" stroke-width="3"/></svg><h3>Youth training</h3><p>Hands-on skills in solar installation, borehole upkeep and, now, irrigated farming and selling produce.</p></div>
+<div class="svc"><svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="16" r="7" fill="#fff"/><circle cx="12" cy="22" r="5.5" fill="#F5C400"/><circle cx="44" cy="22" r="5.5" fill="#F5C400"/><path d="M16 46 C16 32 40 32 40 46Z" fill="#fff"/><path d="M2 46 C2 36 20 34 20 42 V46Z M54 46 C54 36 36 34 36 42 V46Z" fill="#F5C400"/></svg><h3>Youth employment</h3><p>Paid roles on our projects and farm, and a route for young growers to run their own plots.</p></div>
+</div>
 </div>
 </section>
 
@@ -253,17 +212,16 @@ footer a{color:#fff}
 
 <section class="band" id="partners">
 <div class="wrap">
-<h2>Work with us</h2>
-<div class="cards">
-<div class="card"><h3>Buyers</h3><p>Traders, greengrocers, supermarkets, restaurants and institutions. Tell us the grade, volume and delivery days you need and we will plan our planting around it.</p></div>
-<div class="card"><h3>Communities and schools</h3><p>Need a borehole or solar power? We site, install and maintain systems, and train local young people to look after them.</p></div>
-<div class="card"><h3>Funders and partners</h3><p>We are seeking equipment finance, working capital, agronomy mentoring and buyer introductions to put the pilot farm in the ground.</p></div>
+<h2>Invest in the pilot</h2>
+<div class="split" style="margin-top:20px;align-items:center">
+<p class="lead">We are seeking US$10,000 for solar irrigation, inputs and working capital, plus agronomy mentoring and buyer introductions. The plan, use of funds and projections are on our investment page.</p>
+<div class="row"><a class="btn sun" href="invest.html">Investment &amp; partnerships</a></div>
 </div>
 <div class="founder">
 <div class="mono" aria-hidden="true">TC</div>
 <div style="display:grid;gap:8px">
 <h3>Thomas Chikondo, Founder</h3>
-<p class="lead">Thomas, 30, founded WYGEI in Waterfalls, Harare, to give young people practical skills and paid work in water and green energy, and is now leading its move into commercial farming.</p>
+<p class="lead">Thomas, 30, founded WYGEI in Waterfalls, Harare, to give young people practical skills and paid work. He is now building it into a commercial agribusiness that grows food with solar-powered irrigation.</p>
 </div>
 </div>
 </div>
@@ -286,7 +244,7 @@ footer a{color:#fff}
 
 <footer class="band" style="padding-block:28px">
 <div class="wrap">
-<p>© 2026 Waterfalls Youth Green Energy Initiative (WYGEI). Empowering youth. Energising communities.</p>
+<p>© 2026 Waterfalls Youth Green Energy Initiative (WYGEI). Growing food. Creating jobs. Empowering youth.</p>
 <p><a href="#top">Back to top</a></p>
 </div>
 </footer>
@@ -320,6 +278,20 @@ if(rnd()>.45)out+=`<circle cx="${x+5}" cy="${y+2}" r="5" fill="#E2412E"/>`;
 out+=`<path d="M560 306 V416" stroke="#16346E" stroke-width="3"/>`;
 rows.innerHTML=out;
 
+
+const crops=[
+{name:'Tomatoes',ha:0.5,t:8,p:0.90},
+{name:'Onions',ha:0.75,t:7,p:1.20},
+{name:'Potatoes',ha:0.75,t:5,p:0.88}];
+const costs=[['Seed, fertiliser and crop protection',6000],['Packaging and transport',2400],['Labour: 4 paid roles',4800],['Irrigation upkeep and energy',1200],['Admin and other',1600]];
+const fmt=n=>n.toLocaleString('en-US');
+const rev=crops.reduce((a,c)=>a+c.t*1000*c.p,0);
+const cost=costs.reduce((a,c)=>a+c[1],0);
+document.getElementById('crops').innerHTML=crops.map(c=>`<tr><td>${c.name}</td><td class="n">${c.ha}</td><td class="n">${c.t}</td><td class="n">${c.p.toFixed(2)}</td><td class="n">${fmt(Math.round(c.t*1000*c.p))}</td></tr>`).join('')+`<tr class="tot"><td>Total</td><td class="n">${crops.reduce((a,c)=>a+c.ha,0)}</td><td class="n">${crops.reduce((a,c)=>a+c.t,0)}</td><td class="n">${(rev/crops.reduce((a,c)=>a+c.t*1000,0)).toFixed(2)}</td><td class="n">${fmt(Math.round(rev))}</td></tr>`;
+const mx=Math.max(...crops.map(c=>c.t*c.p));
+document.getElementById('bars').innerHTML=crops.map(c=>`<div class="bar"><span>${c.name}</span><div class="track"><div class="fill" style="width:${(c.t*c.p/mx*100).toFixed(1)}%"></div></div><b>$${fmt(Math.round(c.t*1000*c.p))}</b></div>`).join('');
+document.getElementById('k-rev').textContent='$'+fmt(Math.round(rev));
+document.getElementById('pl').innerHTML=`<tr><td>Sales revenue</td><td class="n">${fmt(Math.round(rev))}</td></tr>`+costs.map(c=>`<tr><td>${c[0]}</td><td class="n">−${fmt(c[1])}</td></tr>`).join('')+`<tr class="tot"><td>Operating surplus (${Math.round((rev-cost)/rev*100)}%)</td><td class="n">${fmt(Math.round(rev-cost))}</td></tr>`;
 const f=document.getElementById('enq'),o=document.getElementById('out'),t=document.getElementById('out-text'),err=document.getElementById('f-err');
 f.addEventListener('submit',e=>{
 e.preventDefault();
@@ -337,5 +309,6 @@ try{await navigator.clipboard.writeText(t.textContent);e.target.textContent='Cop
 });
 }
 </script>
+<script>{for(const t of document.querySelectorAll("table.stack")){const h=[...t.tHead.rows[0].cells].map(c=>c.textContent);for(const r of t.tBodies[0].rows)[...r.cells].forEach((c,i)=>c.dataset.l=h[i])}}</script>
 </body>
 </html>
